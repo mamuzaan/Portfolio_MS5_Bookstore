@@ -1,6 +1,61 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="text-success">Home page</h1>
+<main>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="px-4 py-5 my-5 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                    <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                  </svg>
+                <h1 class="display-5 fw-bold">Online Book Store</h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4">Discover the Magic of Books: Read, Love, and Buy. Are you ready for a journey beyond your wildest dreams? 
+                    A place where you can escape into new worlds, learn new things, and make new friends? Then look no further than the wonderful 
+                    world of books! At our bookstore, we believe that books are more than just words on a page. They are portals to adventure,
+                    teachers of wisdom, and companions for life. When you read a book, you open your mind to endless possibilities and new horizons.
+                    </p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Shop now</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Register</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/480px-Shakespeare.jpg" alt="William Shakespeare" style="width:150px">
+                <h2 class="fw-normal">William Shakespeare</h2>
+                <p>Shakespearean Tragedies and Comedies: The Genius of William Shakespeare.</p>
+                <p>Do you want to buy book about Shakespeare<a class="btn btn-secondary" href="#">Click here</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Carl_Van_Vechten_-_William_Faulkner.jpg/480px-Carl_Van_Vechten_-_William_Faulkner.jpg" alt="William Faulkner" style="width:140px">
+                <h2 class="fw-normal">William Faulkner</h2>
+                <p>The Nobel Laureate: A Celebration of Faulkner's Literary Achievements.</p>
+                <p>Do you want to buy book about William Faulkner<a class="btn btn-secondary" href="#">Click here</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Jane_Austen_%28chopped%29.jpg/480px-Jane_Austen_%28chopped%29.jpg" alt="Jane Austen" style="width:160px">
+                <h2 class="fw-normal">Jane Austen</h2>
+                <p>Sense and Sensibility: The Themes and Style of Jane Austen's Novels.</p>
+                <p>Do you want to buy book about Jane Austen<a class="btn btn-secondary" href="#">Click here</a></p>
+            </div>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+</main>
+    
 {% endblock %}
