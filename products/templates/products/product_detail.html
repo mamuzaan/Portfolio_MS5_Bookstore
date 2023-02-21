@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="col text-center mt-3">
+                <h2>Product details</h2>
+                <hr class="featurette-divider">
+            </div>
+        </div>
+    </div>
+    <div class="album py-5">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+              <div class="image-container my-5">
+                  {% if product.image %}
+                  <a href="{{ product.image.url }}" target="_blank">
+                  <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                  </a>
+                  {% endif %}
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+              <div class="product-details-container mb-5 mt-md-5">
+                  <p>{{ product.name }}</p>
+                  <p><span class="lead">{{ product.author }}</span> (Author)</p>
+                  <p>{{ product.description|slice:":900" }}...</p>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>    
+{% endblock %}
