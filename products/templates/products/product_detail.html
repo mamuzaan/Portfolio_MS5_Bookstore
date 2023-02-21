@@ -34,8 +34,10 @@
           <div class="col-12 col-md-6 col-lg-4">
               <div class="product-details-container mb-5 mt-md-5">
                   <p>{{ product.name }}</p>
+                  <h4>{{ product.title }}</h4>
                   <p><span class="lead">{{ product.author }}</span> (Author)</p>
                   <p>{{ product.description|slice:":900" }}...</p>
+                  <h5><p>Price: ${{ product.price }}</p></h5>
               </div>
           </div>
           </div>
