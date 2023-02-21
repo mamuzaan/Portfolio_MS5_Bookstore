@@ -5,7 +5,6 @@
   <head>
     {% block meta %}
       <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" contents="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
 
@@ -40,16 +39,25 @@
             <div class="text-center"><img src="https://thumbs.dreamstime.com/b/hand-book-logo-illustration-art-background-43965136.jpg" alt="book-logo" style="width:50px" class="mx-auto"></div>
           </a>
   
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-dark">Home</a></li>
-            <li><a href="#" class="nav-link px-2 text-dark">Products</a></li>
-          </ul>
+          <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <a href="#" class="nav-link px-2 text-dark">Home</a>
+            <div class="dropdown">
+              <div class="btn dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" role="navigation">
+                Product
+              </div>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">All Products</a></li>
+                <li><a class="dropdown-item" href="#"></a></li>
+                <li><a class="dropdown-item" href="#"></a></li>
+              </ul>
+            </div>
+          </div>
   
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="GET" action="">
-            <input type="search" class="form-control form-control-dark text-bg-light" type="text" name="a" placeholder="Search product .." aria-label="Search">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="GET" action="#">
+            <input type="search" class="form-control form-control-dark text-bg-light" name="a" placeholder="Search product .." aria-label="Search">
           </form>
           <div class="text-end dropdown">
-            <button class="btn dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" role="navigation">
               <a class="text-black nav-link" href="#">
                 <div class="text-center">
                   <div>
@@ -58,8 +66,8 @@
                   <p class="my-0">My Account</p>
                 </div>
               </a>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
                 <li><a href="#" class="dropdown-item">Product Management</a></li>
