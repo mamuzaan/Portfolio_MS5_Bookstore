@@ -10,12 +10,40 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col">
-            {{ products }}
+            <div class="col text-center mt-3">
+                <h2>Products</h2>
+                <hr class="featurette-divider">
+            </div>
         </div>
+    </div>
+    <div class="album py-5">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            {% for product in products %}
+            <div class="col">
+              <div class="card shadow-sm">
+                {% if product.image %}
+                <a href="">
+                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+                <div class="card-body">
+                  <p class="card-text">
+                    <a class="text-dark text-decoration-none" href="{{ products.get_absolute_url }}">{{ product.title }}</a>
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Price: ${{ product.price }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
 </div>    
 {% endblock %}
