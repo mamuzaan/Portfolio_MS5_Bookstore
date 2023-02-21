@@ -53,8 +53,8 @@
             </div>
           </div>
   
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="GET" action="#">
-            <input type="search" class="form-control form-control-dark text-bg-light" name="a" placeholder="Search product .." aria-label="Search">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="GET" action="{% url 'products:products' %}">
+            <input type="search" class="form-control form-control-dark text-bg-light" name="q" placeholder="Search product .." aria-label="Search">
           </form>
           <div class="text-end dropdown">
             <div class="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" role="navigation">
