@@ -40,15 +40,17 @@
           </a>
   
           <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <a href="#" class="nav-link px-2 text-dark">Home</a>
+            <a href="/" class="nav-link px-2 text-dark">Home</a>
             <div class="dropdown">
               <div class="btn dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" role="navigation">
                 Product
               </div>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="{% url 'products:products' %}">All Products</a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
+                <li><a class="dropdown-item" href="{% url 'products:products' %}?category=Jane Austen">Jane Austen</a></li>
+                <li><a class="dropdown-item" href="{% url 'products:products' %}?category=William Faulkner">William Faulkner</a></li>
+                <li><a class="dropdown-item" href="{% url 'products:products' %}?category=Jane Austen">William Shakespeare</a></li>
+                
               </ul>
             </div>
           </div>
