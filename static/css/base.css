@@ -5,3 +5,8 @@ html {
 .william {
     border-radius: 50%;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
