@@ -36,8 +36,32 @@
                   <p>{{ product.name }}</p>
                   <h4>{{ product.title }}</h4>
                   <p><span class="lead">{{ product.author }}</span> (Author)</p>
-                  <p>{{ product.description|slice:":900" }}...</p>
                   <h5><p>Price: ${{ product.price }}</p></h5>
+                  <p>{{ product.description|slice:":900" }}...</p>
+                  <form class="form" action="{% url 'basket:add_to_basket' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group w-50">
+                                <div class="input-group">
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.product.slug }}" id="id_qty_{{ item.product.slug }}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <a href="{% url 'products:products' %}" class="btn btn-outline-secondary px-4 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Continue Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-primary px-4 gap-3 text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
               </div>
           </div>
           </div>
