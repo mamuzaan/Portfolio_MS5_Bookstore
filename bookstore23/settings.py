@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'checkout',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bookstore23.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
