@@ -4,14 +4,14 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['name', 'town_or_city', 'street_address1', 'postcode', 'country', 'email', 'phone_number', 'county']
+        fields = ['name', 'town_or_city', 'street_address', 'postcode', 'country', 'email', 'phone_number', 'county']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
             'name': 'Name',
             'town_or_city': 'Town or City',
-            'street_address1': 'Street Address 1',
+            'street_address': 'Street Address',
             'postcode': 'Postal Code',
             'country': 'Country',
             'email': 'Email Address',
