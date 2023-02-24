@@ -18,7 +18,7 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'county': 'County'
         }
-        
+
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
