@@ -21,13 +21,13 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search item!")
-                return redirect(reverse('products'))
+                return redirect(reverse('products:products'))
 
             queries = Q(title__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     return render(
-        request, "products/products.html", {'products': products,'search_term': query, 'current_categories': categories})
+        request, "products/products.html", {'products': products, 'search_term': query, 'current_categories': categories,})
 
 
 def product_detail(request, slug):
