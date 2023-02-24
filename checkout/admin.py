@@ -2,13 +2,11 @@ from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
-@admin.register(OrderLineItem)
 class OrderLineItemInline(admin.TabularInline):
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
-@admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemInline,)
     readonly_fields = ('order_number', 'date', 'order_total_price', 'grand_total_price',)
@@ -26,3 +24,6 @@ class OrderAdmin(admin.ModelAdmin):
             'fields': ('order_total_price', 'delivery_cost', 'grand_total_price',)
         }),
     )
+
+
+admin.site.register(Order, OrderAdmin)
