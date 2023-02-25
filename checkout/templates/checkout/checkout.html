@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-lg-5 order-md-end mb-5">
+            <div class="col-12 col-lg-6 order-md-end mb-5">
                 <p class="text-muted"><b>Order Summary</b> ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout:checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
@@ -93,7 +93,7 @@
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                        <legend class="fieldset-label small text-black px-2 w-auto"><b>Payment</b></legend>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
 
@@ -131,4 +131,5 @@
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
