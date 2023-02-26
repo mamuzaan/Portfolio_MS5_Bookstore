@@ -15,10 +15,10 @@ class OrderAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Order Information', {
-            'fields': ('order_number', 'user', 'name', 'email', 'phone_number', 'date',)
+            'fields': ('order_number', 'name', 'email', 'phone_number', 'date',)
         }),
         ('Delivery Address', {
-            'fields': ('street_address1', 'town_or_city', 'postcode', 'county', 'country',)
+            'fields': ('street_address', 'town_or_city', 'postcode', 'county', 'country',)
         }),
         ('Order Totals', {
             'fields': ('order_total_price', 'delivery_cost', 'grand_total_price',)
