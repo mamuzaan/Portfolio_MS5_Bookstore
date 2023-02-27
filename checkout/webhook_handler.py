@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from .models import Order, OrderLineItem
+from products.models import Product
+import time
 
 
 class StripeWH_Handler:
@@ -48,6 +51,8 @@ class StripeWH_Handler:
                     street_address__iexact=shipping_details.address.line1,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
+                    genuine_basket=basket,
+                    stripr_pid=pid,
                 )
                 order_exists = True
                 break
@@ -55,7 +60,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order)
+            # self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -71,7 +76,8 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping_details.address.city,
                     street_address__iexact=shipping_details.address.line1,
                     county__iexact=shipping_details.address.state,
-                    grand_total=grand_total,
+                    genuine_basket=basket,
+                    stripr_pid=pid,
                 )
                 for item_id, item_data in basket.items():
                         product = Product.objects.get(id=item_id)
