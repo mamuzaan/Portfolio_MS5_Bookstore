@@ -147,3 +147,25 @@ html {
     color: #141313;
     border: 1px solid #141313;
 }
+
+/* loading spinner */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner-border {
+    display:flex;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+  }
+  
