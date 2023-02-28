@@ -143,6 +143,11 @@ select option[value=""] {
     color: #aab7c4;
 }
 
+.order-history {
+    max-width: 415px;
+    overflow-y: auto;
+}
+
 /* ------------------ bootstrap toasts */
 
 .message-container {
