@@ -21,6 +21,14 @@ html {
     height: auto;
 }
 
+.logo-font {
+    text-transform: uppercase;;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
