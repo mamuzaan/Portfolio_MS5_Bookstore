@@ -25,6 +25,7 @@ urlpatterns = [
     path('products/', include('products.urls', namespace='products')),
     path('basket/', include('basket.urls', namespace='basket')),
     path('checkout/', include('checkout.urls', namespace='checkout')),
+    path('profiles/', include('profiles.urls', namespace='profiles')),
 ]
 
 if settings.DEBUG:
