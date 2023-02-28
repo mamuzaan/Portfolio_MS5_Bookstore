@@ -41,6 +41,16 @@ html {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 /* bootstrap toasts */
 
 .message-container {
