@@ -15,7 +15,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Order Information', {
-            'fields': ('order_number', 'name', 'email', 'phone_number', 'date', 'genuine_basket', 'stripe_pid',)
+            'fields': ('order_number', 'user_profile', 'name', 'email', 'phone_number', 'date', 'genuine_basket', 'stripe_pid',)
         }),
         ('Delivery Address', {
             'fields': ('street_address', 'town_or_city', 'postcode', 'county', 'country',)
