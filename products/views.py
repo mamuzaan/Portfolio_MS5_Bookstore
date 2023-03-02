@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
-from django.views import generic, View
+from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.views import View, generic
+
+from .models import Category, Product
 
 
 def all_products(request):
