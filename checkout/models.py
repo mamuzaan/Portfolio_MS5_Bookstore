@@ -76,3 +76,14 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'{self.product.title} on order {self.order.order_number})'
+
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    text = models.TextField()
+    rating = models.IntegerField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Review for {self.product.name} by {self.user_profile.user.username}'
