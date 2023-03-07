@@ -10,7 +10,6 @@ from basket.context_processors import basket as basket_processor
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
-
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
